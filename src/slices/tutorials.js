@@ -1,7 +1,5 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import TutorialDataService from "../services/tutorial.service";
-
-const initialState = [];
 
 export const createTutorial = createAsyncThunk(
   "tutorials/create",
@@ -53,7 +51,7 @@ export const findTutorialsByTitle = createAsyncThunk(
 
 const tutorialSlice = createSlice({
   name: "tutorial",
-  initialState,
+  initialState: [],
   extraReducers: {
     [createTutorial.fulfilled]: (state, action) => {
       state.push(action.payload);
