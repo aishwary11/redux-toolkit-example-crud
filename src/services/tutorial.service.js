@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const http = axios.create({
+const autoInstance = axios.create({
   baseURL: "http://localhost:8080/api",
   headers: {
     "Content-type": "application/json"
@@ -9,31 +9,31 @@ const http = axios.create({
 
 class TutorialDataService {
   getAll() {
-    return http.get("/tutorials");
+    return autoInstance.get("/tutorials");
   }
 
   get(id) {
-    return http.get(`/tutorials/${id}`);
+    return autoInstance.get(`/tutorials/${id}`);
   }
 
   create(data) {
-    return http.post("/tutorials", data);
+    return autoInstance.post("/tutorials", data);
   }
 
   update(id, data) {
-    return http.put(`/tutorials/${id}`, data);
+    return autoInstance.put(`/tutorials/${id}`, data);
   }
 
   delete(id) {
-    return http.delete(`/tutorials/${id}`);
+    return autoInstance.delete(`/tutorials/${id}`);
   }
 
   deleteAll() {
-    return http.delete(`/tutorials`);
+    return autoInstance.delete(`/tutorials`);
   }
 
   findByTitle(title) {
-    return http.get(`/tutorials?title=${title}`);
+    return autoInstance.get(`/tutorials?title=${title}`);
   }
 }
 
