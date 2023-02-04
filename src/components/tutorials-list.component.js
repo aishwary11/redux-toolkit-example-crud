@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {
-  retrieveTutorials,
-  findTutorialsByTitle,
-  deleteAllTutorials,
-} from "../slices/tutorials";
 import { Link } from "react-router-dom";
+import {
+  deleteAllTutorials, findTutorialsByTitle, retrieveTutorials
+} from "../slices/tutorials";
 
 class TutorialsList extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
     this.refreshData = this.refreshData.bind(this);

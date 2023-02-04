@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { updateTutorial, deleteTutorial } from "../slices/tutorials";
-import TutorialDataService from "../services/tutorial.service";
 import { withRouter } from '../common/with-router';
+import TutorialDataService from "../services/tutorial.service";
+import { deleteTutorial, updateTutorial } from "../slices/tutorials";
 
 class Tutorial extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
@@ -100,7 +100,7 @@ class Tutorial extends Component {
       .unwrap()
       .then((reponse) => {
         console.log(reponse);
-        
+
         this.setState({ message: "The tutorial was updated successfully!" });
       })
       .catch((e) => {

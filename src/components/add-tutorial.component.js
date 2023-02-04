@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { createTutorial } from "../slices/tutorials";
 
 class AddTutorial extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
